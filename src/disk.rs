@@ -3,11 +3,11 @@ use std::io::{self, Read, Write};
 use std::path::Path;
 use std::io::Seek;
 
-const PAGE_SIZE: u64 = 4096;
+pub const PAGE_SIZE: u64 = 4096;
 
 // #[derive(Debug, Clone, Copy, Eq, PartialEq, Hash, FromBytes, AsBytes)]
 // #[repr(C)]
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Hash)]
 pub struct PageId(pub u64);
 
 pub struct DiskManager{
